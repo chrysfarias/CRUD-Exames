@@ -9,7 +9,7 @@ public class Exame {
 	
 	
 		@Id
-		private Long id;
+		private int codigo;
 		
 		private String nomeExame;
 		private String descricao;
@@ -29,11 +29,11 @@ public class Exame {
 		public void setDescricao(String descricao) {
 			this.descricao = descricao;
 		}
-		public Long getId() {
-			return id;
+		public int getCodigo() {
+			return codigo;
 		}
-		public void setId(Long id) {
-			this.id = id;
+		public void setCodigo(int codigo) {
+			this.codigo = codigo;
 		}
 		
 		

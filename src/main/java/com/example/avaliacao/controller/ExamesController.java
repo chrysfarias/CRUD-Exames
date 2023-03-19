@@ -3,8 +3,10 @@ package com.example.avaliacao.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.avaliacao.dto.RequisocaoNovoExame;
 import com.example.avaliacao.model.Exame;
 import com.example.avaliacao.repository.ExameRepository;
 
@@ -12,8 +14,8 @@ import com.example.avaliacao.repository.ExameRepository;
 @RequestMapping("/exame")
 public class ExamesController {
 	
-	//@Autowired
-	//private ExameRepository exameRepository;
+	@Autowired
+	private ExameRepository exameRepository;
 	
 	
 	@GetMapping("/home")
@@ -21,18 +23,19 @@ public class ExamesController {
 		return "examesprincipal";
 	}
 	
-
-	@GetMapping("/novo")
-	public String novo() {	
-		
-		//Exame exame1 = new Exame();
-		//exame1.setCodigo(45892);
-		//exame1.setDescricao("Primeiro Exame");
-		//exame1.setNomeExame("Diabets");
-		
-		//exameRepository.save(exame1);
-		
+	
+	@GetMapping("/formulario")
+	public String pagina2() {		
 		return "exameformulario";
+	}
+
+	@PostMapping("/novo")
+	public String novo(RequisocaoNovoExame requisicaoNovoExame) {	
+		
+		Exame exame  = requisicaoNovoExame.toExame();
+		exameRepository.save(exame);
+		
+		return "teste";
 	}
 	
 	

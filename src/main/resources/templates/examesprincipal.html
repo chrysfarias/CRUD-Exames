@@ -19,9 +19,36 @@
 				<a class="nav-link" href="ddd">funcionalidade2 </a>	
 				<a class="nav-link" href="ddd">funcionalidade3 </a>
 			</div>
-			<a href="formulario" ><button class="btn btn-outline-secondary" >Cadastrar Exame</button></a>			
+			<a href="formulario" ><button class="btn btn-outline-secondary" >Cadastrar Exame</button></a>	
+			
+			
 		</nav>
+	
+		<div class="card" th:each="exame: ${exames}">
+			<div class="card-header" th:text="${exame.nomeExame}">Nome do Exame</div>
+			<div class ="card-body">
+			<div class="row">
+					<div class="col-12 col-sm-8 mb-3">
+					
+						<div>Nome do Exame</div>
+						<div> <input class="form-control" th:value="${exame.nomeExame}"value="url do"/></div>
+                        <div>Codigo do Exame</div>
+						<div> <input class="form-control" th:value="${exame.codigo}"value="url do"/></div>
+						<div> Descrição</div>
+						<div>
+							<textarea class="form-control">Descrição do Exame</textarea>
+						</div>					
+					</div>      
+			</div>
+	</div>  
 	</div>
+
+</body>
+		
+		
+	
+	
+	
 </html>
 		
 	

@@ -11,7 +11,7 @@
 			<h1 class="display-4">Alterar exame</h1>		
 		</div>
 		
-		<form th:object ="${exame}" action="novo" method ="POST">
+		<form th:object ="${exame}" action="salvar" method ="POST">
 		
 			<label for=nomeExame>Exame</label><br>	
 			<input  th:field="*{nomeExame}" name="nomeExame"  placeholder="nome do exame"/><br>

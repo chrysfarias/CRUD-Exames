@@ -27,8 +27,7 @@ public class ExamesController {
 	public String pagina(Model model) {
 		List <Exame> exames = exameRepository.findAll();
 		model.addAttribute("exames",exames);
-		return "examesprincipal";
-		
+		return "examesprincipal";	
 	}
 	
 	
@@ -46,13 +45,17 @@ public class ExamesController {
 		return "teste";
 	}
 	
-	@GetMapping("/{id}")
 	
-	public String teste() {
-	//public String alterarExame(@PathVariable("id") int id) {
-		return "teste2";
-	}
-	
+	@GetMapping ("/{id}")
+    public String alterarPessoa(@PathVariable("id") int codigo, Model model){
+		Optional<Exame> exameOpt = exameRepository.findById(codigo);
+		if(exameOpt.isEmpty()) {
+			throw new IllegalArgumentException("Exame Invalido.");		
+		}	
+		model.addAttribute("exame",exameOpt.get());
+		return "formteste";
+		
+    }
 	
 	
 	

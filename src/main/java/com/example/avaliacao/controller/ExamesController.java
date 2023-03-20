@@ -63,8 +63,19 @@ public class ExamesController {
 		exameRepository.save(exame);
 		return "teste";
 	}
+	 
 	
+
 	
-	
-	
+	@GetMapping("/excluir/{id}")
+	public String excluirExame(@PathVariable("id") int codigo) {
+		Optional<Exame> exameOpt = exameRepository.findById(codigo);
+		if(exameOpt.isEmpty()) {
+			throw new IllegalArgumentException("Exame Invalido.");
+		}
+		exameRepository.delete(exameOpt.get());  //?
+		return "teste2";
+		
+		
+	}
 }

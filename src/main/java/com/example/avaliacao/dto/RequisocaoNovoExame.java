@@ -5,7 +5,7 @@ import com.example.avaliacao.model.Exame;
 public class RequisocaoNovoExame {
 
 	private String nomeExame;
-	private int codigoExame;
+	private Integer codigoExame;
 	private String descricao;
 	
 	
@@ -15,10 +15,10 @@ public class RequisocaoNovoExame {
 	public void setNomeExame(String nomeExame) {
 		this.nomeExame = nomeExame;
 	}
-	public int getCodigoExame() {
+	public Integer getCodigoExame() {
 		return codigoExame;
 	}
-	public void setCodigoExame(int codigoExame) {
+	public void setCodigoExame(Integer codigoExame) {
 		this.codigoExame = codigoExame;
 	}
 	public String getDescricao() {

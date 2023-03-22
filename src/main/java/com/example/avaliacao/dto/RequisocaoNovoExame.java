@@ -1,10 +1,19 @@
 package com.example.avaliacao.dto;
 
+
+
 import com.example.avaliacao.model.Exame;
+
+
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
 
 public class RequisocaoNovoExame {
 
+	@NotEmpty
 	private String nomeExame;
+	@NotNull
 	private Integer codigoExame;
 	private String descricao;
 	

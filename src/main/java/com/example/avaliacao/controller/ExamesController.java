@@ -49,7 +49,7 @@ public class ExamesController {
 		Exame exame  = requisicaoNovoExame.toExame();
 		exameRepository.save(exame);
 		
-		return "teste";
+		return "redirect:/exame/home";
 	}
 	
 	
@@ -67,7 +67,7 @@ public class ExamesController {
 	@PostMapping("/salvar")
 	public String salvarExame(@ModelAttribute("exame") Exame exame) {
 		exameRepository.save(exame);
-		return "teste";
+		return "redirect:/exame/home";
 	}
 	 
 	
@@ -80,7 +80,7 @@ public class ExamesController {
 			throw new IllegalArgumentException("Exame Invalido.");
 		}
 		exameRepository.delete(exameOpt.get());  //?
-		return "teste2";
+		return "redirect:/exame/home";
 		
 		
 	}

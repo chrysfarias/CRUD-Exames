@@ -36,14 +36,11 @@
 						<div> <input class="form-control" th:value="${exame.codigo}"value="url do"/></div>
 						<div> Descrição</div>
 						<div>
-							<textarea class="form-control">Descrição do Exame</textarea>
-						</div>					
-					</div>  
-					
-					
-					
-					<a th:href="@{/exame/{id}	(id=${exame.codigo})}">Alterar></a>   
-					<a th:href="@{/exame/excluir/{id}	(id=${exame.codigo})}">Deletar></a>     
+							<textarea  th:text="${exame.descricao}" class="form-control">Descrição do Exame</textarea>
+						</div>	<br>				
+						<a button class="btn btn-outline-secondary"   th:href="@{/exame/{id}	(id=${exame.codigo})}">Alterar</a>  
+						<a button class="btn btn-outline-secondary"    th:href="@{/exame/excluir/{id}	(id=${exame.codigo})}">Deletar</a>      
+					</div>  				  
 			</div>
 	</div>  
 	</div>

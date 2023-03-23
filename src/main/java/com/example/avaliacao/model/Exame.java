@@ -18,9 +18,6 @@ public class Exame {
 		private String nomeExame;
 		private String descricao;
 	
-		//relacionamento
-		
-		
 		
 		@ManyToMany
 		@JoinTable(name="exames_funcionarios",
@@ -30,9 +27,6 @@ public class Exame {
 		)
 		
 		Set <Funcionario> funcionario;
-		
-		
-		
 				
 		public String getNomeExame() {
 			return nomeExame;

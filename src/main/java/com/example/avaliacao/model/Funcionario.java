@@ -1,6 +1,9 @@
 package com.example.avaliacao.model;
 
+import java.time.LocalDate;
 import java.util.Set;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +23,8 @@ public class Funcionario {
 	private String nome;
 	private Integer idade;
 	private String cpf;
-    // data nascimento	
+	@DateTimeFormat(style="yyyy-MM-dd")
+    private LocalDate  dataNascimento;	
 	private String profissao;
 	
 	@ManyToMany(mappedBy="funcionario")
